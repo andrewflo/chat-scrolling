@@ -11,13 +11,6 @@ function App() {
   const scrollPosRef = useRef(0);
 
   useEffect(() => {
-    // Scroll to bottom on initial load
-    if (divRef.current) {
-      divRef.current.scrollTop = divRef.current.scrollHeight;
-    }
-  }, []);
-
-  useEffect(() => {
     function loadMore() {
       if (divRef.current) {
         const { scrollTop, scrollHeight } = divRef.current;
@@ -33,6 +26,7 @@ function App() {
     () => divRef.current?.removeEventListener('scroll', loadMore);
   }, []);
 
+  // Scroll to bottom on initial load & when messages are loaded
   useLayoutEffect(() => {
     if (divRef.current) {
       divRef.current.scrollTop = divRef.current.scrollHeight - scrollPosRef.current;
