@@ -34,7 +34,7 @@ function App() {
   }, [messages.length]);
 
   return (
-    <main className='py-12 max-w-4xl w-full mx-auto'>
+    <main className='py-12 px-2 max-w-4xl w-full mx-auto'>
       <h1 className='text-4xl font-semibold mb-4'>Chat scrolling</h1>
 
       <ol className='mb-8 text-lg'>
